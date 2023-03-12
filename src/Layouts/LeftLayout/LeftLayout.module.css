@@ -1,0 +1,41 @@
+.LeftLayout {
+  width: 280px;
+  background-color: #1e1e1e;
+  height: 100vh;
+  padding: 10px;
+  -webkit-box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 15%);
+  -moz-box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 15%);
+  box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 15%);
+}
+
+@media (min-width: 320px) {
+  .LeftLayout {
+    display: none;
+  }
+}
+@media (min-width: 481px) {
+  .LeftLayout {
+    display: none;
+  }
+}
+@media (min-width: 641px) {
+  .LeftLayout {
+    display: none;
+  }
+}
+
+@media (min-width: 961px) {
+  .LeftLayout {
+    display: block;
+  }
+}
+@media (min-width: 1025px) {
+  .LeftLayout {
+    display: block;
+  }
+}
+@media (min-width: 1281px) {
+  .LeftLayout {
+    display: block;
+  }
+}

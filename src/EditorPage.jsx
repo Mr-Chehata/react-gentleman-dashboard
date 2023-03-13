@@ -14,7 +14,6 @@ class EditorPage extends React.Component {
   render() {
     return (
       <>
-     {/*    <TopBar></TopBar> */}
         <div className={style.MainLayout}>
           <LeftLayout></LeftLayout>
           <MainLayout></MainLayout>

@@ -2,13 +2,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden !important;
+/*   overflow: hidden !important; */
 }
 .MainLayout {
   display: flex;
   flex-grow: 1;
  /*  padding: 1em; */
   height: 100vh;
-  overflow: hidden !important;
+/*   overflow: hidden !important; */
   background-color: #1a1a1b;
 }

@@ -47,3 +47,6 @@ code {
     margin-top: unset !important;
   }
 }
+.p-breadcrumb {
+  background: #1a1a1b !important;
+}

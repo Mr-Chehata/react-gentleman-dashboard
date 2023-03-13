@@ -3,9 +3,9 @@
   background-color: #1e1e1e;
   height: 100vh;
   padding: 10px;
-  -webkit-box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 15%);
-  -moz-box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 15%);
-  box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 15%);
+  -webkit-box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 35%);
+  -moz-box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 35%);
+  box-shadow: 10px 0px 10px -8px rgb(0 0 0 / 35%);
 }
 
 @media (min-width: 320px) {

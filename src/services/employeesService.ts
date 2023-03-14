@@ -1,9 +1,8 @@
 import API from "../API";
-import EmployeeInterface from "../models/EmployeeInterface";
+import { Employee, EmployeeInterface } from "../models/Employee";
 
 export class EmployeesService {
-  // employees: EmployeeInterface[];
-  employees: any[];
+  employees: EmployeeInterface[];
   constructor() {
     this.employees = [];
   }
@@ -13,12 +12,20 @@ export class EmployeesService {
       res.data.forEach((element: any) => {
         this.employees.push(element);
       });
-      Promise.resolve(this.employees);
+      return Promise.resolve(this.employees);
     });
+  }
 
-    /*   .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })); */
+  _getAllEmployees() {
+    return new Promise<EmployeeInterface[]>((resolve) =>
+      API.get(`employees`).then((res) => {
+        res.data.forEach((element: any) => {
+          this.employees.push(element);
+        });
+        
+        setTimeout(() => resolve(this.employees), 1000)
+      //  resolve(this.employees);
+      })
+    );
   }
 }

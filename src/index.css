@@ -50,3 +50,24 @@ code {
 .p-breadcrumb {
   background: #1a1a1b !important;
 }
+.p-rating .p-rating-item {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  margin: 8px !important;
+}
+
+.p-avatar.p-avatar-xl {
+  width: 6rem;
+  height: 6rem;
+  font-size: 2rem;
+}
+
+.p-dataview .p-dataview-header {
+  background: #1a1a1b !important;
+}
+.p-dataview .p-dataview-content {
+  background: #1a1a1b !important;
+}
+.p-paginator {
+  background: #1a1a1b !important;
+}

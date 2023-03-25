@@ -6,6 +6,7 @@ import { Dropdown } from "primereact/dropdown";
 import { EmployeeInterface } from "../../../models/Employee";
 import { Avatar } from "primereact/avatar";
 import styles from "./CardItem.module.css";
+import { Score } from "../Score/Score";
 
 export function CardItem(props: any) {
   return (
@@ -42,12 +43,7 @@ export function CardItem(props: any) {
           />
           <div className="text-2xl font-bold">{props.employee.name}</div>
           <div className="text-1xl ">{props.employee.email}</div>
-          <Rating
-            value={props.employee.score}
-            readOnly
-            cancel={false}
-            stars={10}
-          ></Rating>
+          <Score value={props.employee.score}></Score>
         </div>
       </div>
     </div>

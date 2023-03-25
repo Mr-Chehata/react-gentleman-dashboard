@@ -32,7 +32,7 @@ export function ListItem(props: any) {
       <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
         <div className="flex flex-column align-items-center sm:align-items-start gap-3">
           <div className="text-2xl font-bold text-900">{props.employee.name}</div>
-          <Rating value={props.employee.score} readOnly cancel={false} stars={10} ></Rating>
+          
           <div className="flex align-items-center gap-3">
             <span className="flex align-items-center gap-2">
               <i className="pi pi-tag"></i>

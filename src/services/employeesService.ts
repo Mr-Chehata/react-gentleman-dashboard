@@ -7,24 +7,15 @@ export class EmployeesService {
     this.employees = [];
   }
 
-  getAllEmployees() {
-    return API.get(`employees`).then((res) => {
-      res.data.forEach((element: any) => {
-        this.employees.push(element);
-      });
-      return Promise.resolve(this.employees);
-    });
-  }
-
   _getAllEmployees() {
     return new Promise<EmployeeInterface[]>((resolve) =>
       API.get(`employees`).then((res) => {
         res.data.forEach((element: any) => {
           this.employees.push(element);
         });
-        
-        setTimeout(() => resolve(this.employees), 2000)
-      //  resolve(this.employees);
+
+        setTimeout(() => resolve(this.employees), 2000);
+        //  resolve(this.employees);
       })
     );
   }

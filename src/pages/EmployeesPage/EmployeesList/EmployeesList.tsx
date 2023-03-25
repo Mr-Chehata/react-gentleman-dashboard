@@ -12,15 +12,18 @@ import styles from "./EmployeesList.module.css";
 import { CardItem } from "../../../components/Employee/CardItem/CardItem";
 import { ListItem } from "../../../components/Employee/ListItem/ListItem";
 
-export function EmployeesList({ employees = [] }: { employees: EmployeeInterface[] }) {
-
+export function EmployeesList({
+  employees = [],
+}: {
+  employees: EmployeeInterface[];
+}) {
   const [layout, setLayout] = useState<DataViewLayoutType>("grid");
   const [sortKey, setSortKey] = useState(1);
   const [sortOrder, setSortOrder] = useState<DataViewSortOrderType>(1);
-  const [sortField, setSortField] = useState("");
+  const [sortField, setSortField] = useState("score");
   const sortOptions = [
-    { label: "Price High to Low", value: "!price" },
-    { label: "Price Low to High", value: "price" },
+    { label: "Score(High to Low)", value: "!score" },
+    { label: "Score(Low to High)", value: "score" },
   ];
 
   const onSortChange = (event: any) => {

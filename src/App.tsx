@@ -9,7 +9,6 @@ import { EmployeesPage } from "./pages/EmployeesPage/EmployeesPage";
 function App() {
   return (
     <div className={style.App}>
-      {/* <Navbar></Navbar> */}
       <PageLayout>
         <EmployeesPage></EmployeesPage>
       </PageLayout>

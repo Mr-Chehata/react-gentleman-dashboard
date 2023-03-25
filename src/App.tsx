@@ -3,14 +3,16 @@ import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import style from "./App.module.css";
 
-import EditorPage from "./EditorPage";
+import PageLayout from "./layouts/PageLayout";
+import { EmployeesPage } from "./pages/EmployeesPage/EmployeesPage";
 
 function App() {
-
   return (
     <div className={style.App}>
       {/* <Navbar></Navbar> */}
-      <EditorPage></EditorPage>
+      <PageLayout>
+        <EmployeesPage></EmployeesPage>
+      </PageLayout>
       <div>{/*   <Counter /> */}</div>
     </div>
   );

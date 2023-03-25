@@ -23,7 +23,7 @@ export class EmployeesService {
           this.employees.push(element);
         });
         
-        setTimeout(() => resolve(this.employees), 1000)
+        setTimeout(() => resolve(this.employees), 2000)
       //  resolve(this.employees);
       })
     );

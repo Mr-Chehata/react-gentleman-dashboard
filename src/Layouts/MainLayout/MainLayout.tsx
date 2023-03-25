@@ -1,15 +1,13 @@
+import MainContent from "./MainContent/MainContent";
 import style from "./MainLayout.module.css";
 import TopBar from "./TopBar/TopBar";
-import MainContent from "./MainContent/MainContent";
-import { Employees } from "../../pages/Employees/Employees";
 
-export default function MainLayout() {
+
+export default function MainLayout(props: any) {
   return (
     <div className={style.MainLayout}>
-      <TopBar></TopBar>
-      <MainContent /* currentPage="Dashbard" */>
-         <Employees></Employees>
-      </MainContent>
+     <TopBar></TopBar>
+     <MainContent>{props.children}</MainContent>
     </div>
   );
 }

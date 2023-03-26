@@ -7,6 +7,7 @@ import { EmployeeInterface } from "../../../models/Employee";
 import { Avatar } from "primereact/avatar";
 import styles from "./CardItem.module.css";
 import { Score } from "../Score/Score";
+import { Outlet, Link } from "react-router-dom";
 
 export function CardItem(props: any) {
   return (
@@ -41,7 +42,14 @@ export function CardItem(props: any) {
             size="xlarge"
             shape="circle"
           />
-          <div className="text-2xl font-bold">{props.employee.name}</div>
+          <div className="text-2xl font-bold">
+            <Link
+              to={`/employees/${props.employee.id}`}
+              className={styles.NameLink}
+            >
+              {props.employee.name}
+            </Link>
+          </div>
           <div className="text-1xl ">{props.employee.email}</div>
           <Score value={props.employee.score}></Score>
         </div>

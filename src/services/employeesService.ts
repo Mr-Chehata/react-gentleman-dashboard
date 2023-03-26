@@ -1,5 +1,5 @@
 import API from "../API";
-import { Employee, EmployeeInterface } from "../models/Employee";
+import { EmployeeInterface } from "../models/Employee";
 
 export class EmployeesService {
   employees: EmployeeInterface[];
@@ -7,15 +7,24 @@ export class EmployeesService {
     this.employees = [];
   }
 
-  _getAllEmployees() {
+   getEmployees(): Promise<EmployeeInterface[]> {
     return new Promise<EmployeeInterface[]>((resolve) =>
       API.get(`employees`).then((res) => {
         res.data.forEach((element: any) => {
           this.employees.push(element);
         });
 
+        //Only to see async loading and show skelton loading
         setTimeout(() => resolve(this.employees), 2000);
-        //  resolve(this.employees);
+      })
+    );
+  }
+
+  getEmployeeById(id: string): Promise<EmployeeInterface> {
+    return new Promise<EmployeeInterface>((resolve) =>
+      API.get(`employees/${id}`).then((res) => {
+        //Only to see async loading and show skeleton loading
+        setTimeout(() => resolve(res.data), 2000);
       })
     );
   }

@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-
-import styles from "./EmployeesPage.module.css";
+import { useParams } from "react-router-dom";
+import styles from "./EmployeeDetailsPage.module.css";
 import { EmployeesService } from "../../services/EmployeesService";
 import { EmployeeInterface } from "../../models/Employee";
 
-export function EmployeesPage() {
+export function EmployeeDetailsPage() {
+  const routerParams = useParams<{ employeeId: string }>();
   const employeesService = new EmployeesService();
-  const [employees, setEmployees] = useState<EmployeeInterface[]>([]);
+  const [employee, setEmployee] = useState<EmployeeInterface>();
 
   useEffect(() => {
-    employeesService
-      ._getAllEmployees()
-      .then((data) => setEmployees(data.slice(0, 12)));
+    if (routerParams.employeeId) {
+      employeesService
+        .getEmployeeById(routerParams.employeeId)
+        .then((data) => setEmployee(data));
+    }
   }, []);
 
-  return <>details</>;
+  return <>{employee?.name}</>;
 }

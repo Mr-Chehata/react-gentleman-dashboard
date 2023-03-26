@@ -7,7 +7,7 @@ export default function MainLayout(props: any) {
   return (
     <div className={style.MainLayout}>
      <TopBar></TopBar>
-     <MainContent>{props.children}</MainContent>
+     <MainContent title={props.title}>{props.children}</MainContent>
     </div>
   );
 }

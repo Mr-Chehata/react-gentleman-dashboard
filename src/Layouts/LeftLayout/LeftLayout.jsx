@@ -6,7 +6,7 @@ import style from "./LeftLayout.module.css";
 export default function LeftLayout() {
   return (
     <div className={style.LeftLayout}>
-    {/*   <Navbar></Navbar> */}
+      {/*   <Navbar></Navbar> */}
     </div>
   );
 }

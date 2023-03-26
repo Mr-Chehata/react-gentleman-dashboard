@@ -13,7 +13,7 @@ export function EmployeesPage() {
 
   useEffect(() => {
     employeesService
-      ._getAllEmployees()
+      .getEmployees()
       .then((data) => setEmployees(data.slice(0, 12)));
   }, []);
 

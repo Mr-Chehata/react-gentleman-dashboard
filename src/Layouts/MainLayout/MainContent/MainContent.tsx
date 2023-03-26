@@ -14,7 +14,7 @@ export default function MainContent(props: any) {
     ></img>
   );
 
-  const items = [{ label: "Dashbaord" }];
+  const items = [{ label: props.title }];
   const home = {
     icon: "pi pi-home",
     url: "https://www.primefaces.org/primereact/showcase",

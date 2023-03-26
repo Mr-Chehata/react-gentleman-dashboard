@@ -1,4 +1,3 @@
-.BreadCrumb {
-  background: inset !important;
-  border: 0px !important;
+.NameLink {
+  text-decoration: none !important;
 }

@@ -14,17 +14,18 @@ import { CardItem } from "../../../components/Employee/CardItem/CardItem";
 import { ListItem } from "../../../components/Employee/ListItem/ListItem";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
+
 export function EmployeesList({
+  isLoading = false,
   employees = [],
 }: {
+  isLoading: boolean;
   employees: EmployeeInterface[];
 }) {
-  const [layout, setLayout] = useState<DataViewLayoutType>("grid");
   const [sortKey, setSortKey] = useState(1);
   const [sortOrder, setSortOrder] = useState<DataViewSortOrderType>(1);
   const [sortField, setSortField] = useState("score");
   const [searchKeyword, setSearchKeyword] = useState("");
-  /*  const [searchedEmployees, setSearchedEmployees] = useState(employees); */
   const sortOptions = [
     { label: "Score(High to Low)", value: "!score" },
     { label: "Score(Low to High)", value: "score" },
@@ -43,6 +44,18 @@ export function EmployeesList({
     }
   };
 
+  const onSearchChange = (event: ChangeEvent<{ value: string }>) => {
+    setSearchKeyword(event?.currentTarget?.value);
+  };
+
+  const itemTemplate = (employee: EmployeeInterface) => {
+    if (!employee) {
+      return;
+    }
+
+    return <CardItem employee={employee} isLoading={isLoading} />;
+  };
+
   const SearchedEmployees: EmployeeInterface[] = useMemo(
     () =>
       employees.filter(function (employee) {
@@ -52,20 +65,6 @@ export function EmployeesList({
       }),
     [searchKeyword, employees]
   );
-
-  const onSearchChange = (event: ChangeEvent<{ value: string }>) => {
-    setSearchKeyword(event?.currentTarget?.value);
-  };
-
-  const itemTemplate = (employee: EmployeeInterface, layout: string) => {
-    if (!employee) {
-      return;
-    }
-
-    if (layout === "list") return <ListItem employee={employee}></ListItem>;
-    else if (layout === "grid")
-      return <CardItem employee={employee}></CardItem>;
-  };
 
   const renderHeader = () => {
     return (
@@ -78,7 +77,7 @@ export function EmployeesList({
               optionLabel="label"
               placeholder="Sort By Score"
               onChange={onSortChange}
-              className="mr-1"
+              className="mr-2"
             />
           </div>
         </div>
@@ -97,27 +96,40 @@ export function EmployeesList({
               />
             </span>
           </div>
-          {/* <DataViewLayoutOptions
-            layout={layout}
-            onChange={(e) => setLayout(e.value)}
-          /> */}
         </div>
       </div>
     );
   };
 
-  return (
-    <div className="card">
-      <DataView
-        value={SearchedEmployees}
-        itemTemplate={itemTemplate}
-        layout={layout}
-        header={renderHeader()}
-        paginator
-        rows={6}
-        sortOrder={sortOrder}
-        sortField={sortField}
-      />
-    </div>
-  );
+  if (!isLoading) {
+    return (
+      <div className="card">
+        <DataView
+          value={SearchedEmployees}
+          itemTemplate={itemTemplate}
+          layout={"grid"}
+          header={renderHeader()}
+          paginator
+          rows={6}
+          sortOrder={sortOrder}
+          sortField={sortField}
+        />
+      </div>
+    );
+  } else {
+    /* Laoding status UI */
+    return (
+      <div className="card mt-3">
+        <div className="p-grid grid p-nogutter grid-nogutter">
+          {(() => {
+            let td = [];
+            for (let i = 1; i <= 6; i++) {
+              td.push(<CardItem isLoading={true} />);
+            }
+            return td;
+          })()}
+        </div>
+      </div>
+    );
+  }
 }

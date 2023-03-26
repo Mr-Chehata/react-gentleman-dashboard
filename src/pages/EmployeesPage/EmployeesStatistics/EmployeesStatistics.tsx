@@ -35,7 +35,7 @@ export function EmployeesStatistics({
     return myteamSet.size;
   }, [employees]);
 
-  const mvb: EmployeeInterface | null = useMemo(() => {
+  const bestEmployee: EmployeeInterface | null = useMemo(() => {
     if (employees.length === 0) return null;
     return employees.reduce((prev, current) => {
       if (current.score > prev.score) return current;
@@ -56,155 +56,140 @@ export function EmployeesStatistics({
     /* to custom components */
     <div>
       <div className="card grid mt-3">
-        <div className="col-12 md:col-6 lg:col-4">
-          <div className=" shadow-2 p-3 border-1 border-50 border-round">
+        <div className={"col-12 md:col-6 lg:col-4 " + styles.statsCard}>
+          <div className=" shadow-2 p-3 border-1 border-50 border-round h-100">
             <div className="flex justify-content-between ">
               <div>
-                <div className="text-900 font-medium text-xl mb-1">
-                  {numberOfEmployees}
-                </div>
                 <span className="block text-500 font-medium">Employees</span>
+                <div className="text-900 font-medium text-4xl mb-1">
+                  {numberOfEmployees}
+                  {/*    <span className="text-green-500 font-medium">
+                    <AvatarGroup className="mt-1">
+                      <Avatar
+                        image={
+                          "https://api.lorem.space/image/face?w=200&h=200&hash=" +
+                          Math.random().toString(8).slice(2)
+                        }
+                        size="normal"
+                        shape="circle"
+                      />
+                      <Avatar
+                        image={
+                          "https://api.lorem.space/image/face?w=200&h=200&hash=" +
+                          Math.random().toString(8).slice(2)
+                        }
+                        size="normal"
+                        shape="circle"
+                      />
+                      <Avatar
+                        image={
+                          "https://api.lorem.space/image/face?w=200&h=200&hash=" +
+                          Math.random().toString(8).slice(2)
+                        }
+                        size="normal"
+                        shape="circle"
+                      />
+                      <Avatar
+                        label={"+" + (numberOfEmployees - 3).toString()}
+                        shape="circle"
+                        size="normal"
+                        style={{ backgroundColor: "#9c27b0", color: "#ffffff" }}
+                      />
+                    </AvatarGroup>
+                  </span> */}
+                </div>
               </div>
-              <div
-                className="flex align-items-center justify-content-center bg-blue-100 border-round"
-                style={{ width: "2.5rem", height: "2.5rem" }}
-              >
-                <i className="pi pi-shopping-cart text-blue-500 text-xl"></i>
+              <div>
+                <i className="pi pi-users text-4xl text-500 font-medium"></i>
               </div>
             </div>
-            {/*   <span className="text-green-500 font-medium">
-             
-              <AvatarGroup className="">
-                <Avatar
-                  image={"https://api.lorem.space/image/face?w=200&h=200&hash=" + Math.random().toString(8).slice(2)}
-                  size="large"
-                  shape="circle"
-                />
-                <Avatar
-                    image={"https://api.lorem.space/image/face?w=200&h=200&hash=" + Math.random().toString(8).slice(2)}
-                  size="large"
-                  shape="circle"
-                />
-                <Avatar
-                  image={"https://api.lorem.space/image/face?w=200&h=200&hash=" + Math.random().toString(8).slice(2)}
-                  size="large"
-                  shape="circle"
-                />
-                <Avatar
-                image={"https://api.lorem.space/image/face?w=200&h=200&hash=" + Math.random().toString(8).slice(2)}
-                  size="large"
-                  shape="circle"
-                />
-                <Avatar
-                  image={"https://api.lorem.space/image/face?w=200&h=200&hash=" + Math.random().toString(8).slice(2)}
-                  size="large"
-                  shape="circle"
-                />
-                <Avatar
-                  label="+2"
-                  shape="circle"
-                  size="large"
-                  style={{ backgroundColor: "#9c27b0", color: "#ffffff" }}
-                />
-              </AvatarGroup>
-            </span>
-           <span className="text-500">since last visit</span>   */}
+
+            {/*    <span className="text-500">since last visit</span> */}
           </div>
         </div>
-        <div className="col-12 md:col-6 lg:col-4">
+        <div className={"col-12 md:col-6 lg:col-4 " + styles.statsCard}>
           <div className=" shadow-2 p-3 border-1 border-50 border-round">
             <div className="flex justify-content-between ">
               <div>
-                <div className="text-900 font-medium text-xl mb-1">
-                  {numberOfMale}
-                </div>
                 <span className="block text-500 font-medium ">
                   Male employees
                 </span>
+                <div className="text-900 font-medium text-4xl mb-1">
+                  {numberOfMale}
+                </div>
               </div>
-              <div
-                className="flex align-items-center justify-content-center bg-orange-100 border-round"
-                style={{ width: "2.5rem", height: "2.5rem" }}
-              >
-                <i className="pi pi-map-marker text-orange-500 text-xl"></i>
+              <div>
+                <i
+                  className="pi pi-user
+ text-4xl text-500 font-medium"
+                ></i>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="col-12 md:col-6 lg:col-4">
+        <div className={"col-12 md:col-6 lg:col-4 " + styles.statsCard}>
           <div className=" shadow-2 p-3 border-1 border-50 border-round">
             <div className="flex justify-content-between ">
               <div>
-                <div className="text-900 font-medium text-xl mb-1">
-                  {lastEmployee?.name}
-                </div>
                 <span className="block text-500 font-medium ">
                   Last hired employee
                 </span>
+                <div className="text-900 font-medium text-2xl mb-1">
+                  {lastEmployee?.name}
+                </div>
               </div>
-              <div
-                className="flex align-items-center justify-content-center bg-orange-100 border-round"
-                style={{ width: "2.5rem", height: "2.5rem" }}
-              >
-                <i className="pi pi-map-marker text-orange-500 text-xl"></i>
+              <div>
+                <i className="pi pi-calendar-times   text-4xl text-500 font-medium"></i>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-12 md:col-6 lg:col-4">
+        <div className={"col-12 md:col-6 lg:col-4 " + styles.statsCard}>
           <div className=" shadow-2 p-3 border-1 border-50 border-round">
             <div className="flex justify-content-between ">
               <div>
-                <div className="text-900 font-medium text-xl mb-1">
+                <span className="block text-500 font-medium ">Teams</span>
+                <div className="text-900 font-medium text-4xl mb-1">
                   {numberOfTeams}
                 </div>
-                <span className="block text-500 font-medium ">Teams</span>
               </div>
-              <div
-                className="flex align-items-center justify-content-center bg-orange-100 border-round"
-                style={{ width: "2.5rem", height: "2.5rem" }}
-              >
-                <i className="pi pi-map-marker text-orange-500 text-xl"></i>
+              <div>
+                <i className="pi pi-th-large text-4xl text-500 font-medium "></i>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-12 md:col-6 lg:col-4">
+        <div className={"col-12 md:col-6 lg:col-4 " + styles.statsCard}>
           <div className=" shadow-2 p-3 border-1 border-50 border-round">
             <div className="flex justify-content-between ">
               <div>
-                {" "}
-                <div className="text-900 font-medium text-xl mb-1">
-                  {numberOfFemale}
-                </div>
                 <span className="block text-500 font-medium ">
                   Female employees
                 </span>
+                <div className="text-900 font-medium text-4xl mb-1">
+                  {numberOfFemale}
+                </div>
               </div>
-              <div
-                className="flex align-items-center justify-content-center bg-orange-100 border-round"
-                style={{ width: "2.5rem", height: "2.5rem" }}
-              >
-                <i className="pi pi-map-marker text-orange-500 text-xl"></i>
+              <div>
+                <i className="pi pi-user text-4xl text-500 font-medium "></i>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-12 md:col-6 lg:col-4">
+        <div className={"col-12 md:col-6 lg:col-4 " + styles.statsCard}>
           <div className=" shadow-2 p-3 border-1 border-50 border-round">
             <div className="flex justify-content-between ">
               <div>
-                <div className="text-900 font-medium text-xl mb-1">{mvb?.name}</div>
                 <span className="block text-500 font-medium ">
                   Employee of the year
                 </span>
+                <div className="text-900 font-medium text-2xl mb-1">
+                  {bestEmployee?.name}
+                </div>
               </div>
-              <div
-                className="flex align-items-center justify-content-center bg-orange-100 border-round"
-                style={{ width: "2.5rem", height: "2.5rem" }}
-              >
-                <i className="pi pi-map-marker text-orange-500 text-xl"></i>
+              <div>
+                <i className="pi pi-star text-4xl text-500 font-medium "></i>
               </div>
             </div>
           </div>

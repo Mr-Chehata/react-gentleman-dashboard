@@ -1,0 +1,6 @@
+.statsCard {
+  max-height: 110px !important;
+}
+.statsCard div {
+  height: 100% !important;
+}

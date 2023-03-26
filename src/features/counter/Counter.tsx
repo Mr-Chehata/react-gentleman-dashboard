@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import {
+/* import {
   decrement,
   increment,
   incrementByAmount,
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from './counterSlice';
+} from './counterSlice'; */
 import styles from './Counter.module.css';
-
+/* 
 export function Counter() {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
@@ -65,4 +65,4 @@ export function Counter() {
       </div>
     </div>
   );
-}
+} */

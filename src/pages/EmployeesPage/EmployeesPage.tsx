@@ -6,21 +6,23 @@ import { EmployeesStatistics } from "./EmployeesStatistics/EmployeesStatistics";
 import styles from "./EmployeesPage.module.css";
 import { EmployeesService } from "../../services/EmployeesService";
 import { EmployeeInterface } from "../../models/Employee";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { fetchEmployees, getEmployeesStore } from "../../app/store/EmployeesSlice";
 
 export function EmployeesPage() {
-  const employeesService = new EmployeesService();
-  const [employees, setEmployees] = useState<EmployeeInterface[]>([]);
+  const employeesFetchState = useAppSelector(getEmployeesStore);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    employeesService
-      .getEmployees()
-      .then((data) => setEmployees(data.slice(0, 12)));
+    dispatch(fetchEmployees());
   }, []);
 
   return (
     <>
-      <EmployeesStatistics employees={employees}></EmployeesStatistics>
-      <EmployeesList employees={employees}></EmployeesList>
+      <EmployeesStatistics
+        employees={employeesFetchState.emloyees}
+      ></EmployeesStatistics>
+      <EmployeesList employees={employeesFetchState.emloyees} isLoading={employeesFetchState.status == "loading"} ></EmployeesList>
     </>
   );
 }

@@ -8,10 +8,11 @@ import { Avatar } from "primereact/avatar";
 import styles from "./CardItem.module.css";
 import { Score } from "../Score/Score";
 import { Outlet, Link } from "react-router-dom";
+import { Skeleton } from "primereact/skeleton";
 
 export function CardItem(props: any) {
-  return (
-    <div className="col-12 sm:col-6 lg:col-12 xl:col-4 p-2">
+  return !props.isLoading && props.employee ? (
+    <div className="col-12 sm:col-6 lg:col-12 xl:col-4 p-2   mb-2">
       <div className="p-3 border-1 surface-border surface-card border-round">
         <div className="flex flex-wrap align-items-center justify-content-between gap-2">
           <div className="flex align-items-center gap-2">
@@ -52,6 +53,25 @@ export function CardItem(props: any) {
           </div>
           <div className="text-1xl ">{props.employee.email}</div>
           <Score value={props.employee.score}></Score>
+        </div>
+      </div>
+    </div>
+  ) : (
+    /* Loading status card UI */
+    <div className="card col-12 sm:col-6 lg:col-12 xl:col-4 p-2">
+      <div className="custom-skeleton p-2">
+        <div className="flex mb-3">
+          <Skeleton shape="circle" size="4rem" className="mr-2"></Skeleton>
+          <div>
+            <Skeleton width="10rem" className="mb-2"></Skeleton>
+            <Skeleton width="5rem" className="mb-2"></Skeleton>
+            <Skeleton height=".5rem"></Skeleton>
+          </div>
+        </div>
+        <Skeleton width="100%" height="150px"></Skeleton>
+        <div className="flex justify-content-between mt-3">
+          <Skeleton width="4rem" height="2rem"></Skeleton>
+          <Skeleton width="4rem" height="2rem"></Skeleton>
         </div>
       </div>
     </div>

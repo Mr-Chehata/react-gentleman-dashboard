@@ -7,14 +7,14 @@ export class EmployeesService {
     this.employees = [];
   }
 
-   getEmployees(): Promise<EmployeeInterface[]> {
+  getEmployees(): Promise<EmployeeInterface[]> {
     return new Promise<EmployeeInterface[]>((resolve) =>
       API.get(`employees`).then((res) => {
         res.data.forEach((element: any) => {
           this.employees.push(element);
         });
 
-        //Only to see async loading and show skelton loading
+        //@note: Only to see async loading and show skelton loader...
         setTimeout(() => resolve(this.employees), 2000);
       })
     );
@@ -23,7 +23,7 @@ export class EmployeesService {
   getEmployeeById(id: string): Promise<EmployeeInterface> {
     return new Promise<EmployeeInterface>((resolve) =>
       API.get(`employees/${id}`).then((res) => {
-        //Only to see async loading and show skeleton loading
+        //@note: Only to see async loading and show skelton loader...
         setTimeout(() => resolve(res.data), 2000);
       })
     );

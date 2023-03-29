@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { EmployeesList } from "./EmployeesList/EmployeesList";
 import { EmployeesStatistics } from "./EmployeesStatistics/EmployeesStatistics";
 
 import styles from "./EmployeesPage.module.css";
-import { EmployeesService } from "../../services/EmployeesService";
-import { EmployeeInterface } from "../../models/Employee";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { fetchEmployees, getEmployeesStore } from "../../app/store/EmployeesSlice";
+import {
+  fetchEmployees,
+  getEmployeesStore,
+} from "../../app/store/EmployeesStore";
+import { Message } from "primereact/message";
 
 export function EmployeesPage() {
   const employeesFetchState = useAppSelector(getEmployeesStore);
@@ -17,12 +19,29 @@ export function EmployeesPage() {
     dispatch(fetchEmployees());
   }, []);
 
-  return (
-    <>
-      <EmployeesStatistics
-        employees={employeesFetchState.emloyees}
-      ></EmployeesStatistics>
-      <EmployeesList employees={employeesFetchState.emloyees} isLoading={employeesFetchState.status == "loading"} ></EmployeesList>
-    </>
-  );
+  if (employeesFetchState.status === "failed") {
+    return (
+      <div className="card mt-4 p-4">
+          <Message
+            severity="error"
+            text={employeesFetchState.status_message}
+          ></Message>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <EmployeesStatistics
+          status={employeesFetchState.status}
+          status_message={employeesFetchState.status_message}
+          employees={employeesFetchState.employees}
+        ></EmployeesStatistics>
+        <EmployeesList
+          employees={employeesFetchState.employees}
+          status={employeesFetchState.status}
+          status_message={employeesFetchState.status_message}
+        ></EmployeesList>
+      </>
+    );
+  }
 }

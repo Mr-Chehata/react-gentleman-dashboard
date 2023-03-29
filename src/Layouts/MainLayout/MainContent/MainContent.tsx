@@ -1,7 +1,5 @@
 import style from "./MainContent.module.css";
 
-import { Menubar } from "primereact/menubar";
-import { InputText } from "primereact/inputtext";
 import { Breadcrumb } from "../../../components/Breadcrumb/Breadcrumb";
 
 export default function MainContent(props: any) {
@@ -14,14 +12,14 @@ export default function MainContent(props: any) {
     ></img>
   );
 
-  const items = [{ label: props.title }];
   const home = {
     icon: "pi pi-home",
-    url: "https://www.primefaces.org/primereact/showcase",
+    url: "/",
   };
   return (
     <div className={style.MainContent}>
-      <Breadcrumb items={items} home={home} />
+      <Breadcrumb items={props.breadcrumb} home={home} />
+      {/* Here page content  */}
       {props.children}
     </div>
   );

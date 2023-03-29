@@ -6,7 +6,7 @@ export default function PageLayout(props: any) {
   return (
     <div className={style.PageLayout}>
       <LeftLayout></LeftLayout>
-      <MainLayout title={props.title}> {props.children}</MainLayout>
+      <MainLayout title={props.title}  breadcrumb={props.breadcrumb} > {props.children}</MainLayout>
     </div>
   );
 }

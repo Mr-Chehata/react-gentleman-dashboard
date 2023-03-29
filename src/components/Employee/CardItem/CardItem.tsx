@@ -1,39 +1,38 @@
-import { BreadCrumb } from "primereact/breadcrumb";
-import { Rating } from "primereact/rating";
-import { Tag } from "primereact/tag";
+
 import { Button } from "primereact/button";
-import { Dropdown } from "primereact/dropdown";
-import { EmployeeInterface } from "../../../models/Employee";
+import { Divider } from "primereact/divider";
 import { Avatar } from "primereact/avatar";
 import styles from "./CardItem.module.css";
 import { Score } from "../Score/Score";
-import { Outlet, Link } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import { Skeleton } from "primereact/skeleton";
+import DateHelper from "../../../helpers/DateHelper";
 
 export function CardItem(props: any) {
-  return !props.isLoading && props.employee ? (
-    <div className="col-12 sm:col-6 lg:col-12 xl:col-4 p-2   mb-2">
+  const navigate = useNavigate();
+
+  function handleShowClick() {
+    navigate("/employees/" + props.employee?.id);
+  }
+  return !props.loading && props.employee ? (
+    <div
+      className="col-12 sm:col-6 lg:col-12 xl:col-4 p-2 mb-2"
+      key={props.employee.id}
+    >
       <div className="p-3 border-1 surface-border surface-card border-round">
         <div className="flex flex-wrap align-items-center justify-content-between gap-2">
           <div className="flex align-items-center gap-2">
-            <i className="pi pi-tag"></i>
-            <span className="font-semibold">{props.employee.position}</span>
+            <i className="pi pi-briefcase text-600 text-1xl"></i>
+            <span className="text-600 text-1xl">{props.employee.position}</span>
           </div>
-          {/* <Tag value={props.employee.name}></Tag> */}
+          <div className="flex align-items-center gap-2">
+            <Button
+              icon="pi pi-eye"
+              className="p-button-rounded"
+              onClick={handleShowClick}
+            ></Button>
+          </div>
         </div>
-        {/*  <div className="flex align-items-center justify-content-between">
-        
-          <Button
-            icon="pi pi-shopping-cart"
-            className="p-button-rounded"
-            disabled={props.employee.name === "OUTOFSTOCK"}
-          ></Button>
-          <Button
-            icon="pi pi-shopping-cart"
-            className="p-button-rounded"
-            disabled={props.employee.name === "OUTOFSTOCK"}
-          ></Button>
-        </div> */}
         <div className="flex flex-column align-items-center gap-3 py-5">
           <Avatar
             image={
@@ -51,8 +50,39 @@ export function CardItem(props: any) {
               {props.employee.name}
             </Link>
           </div>
-          <div className="text-1xl ">{props.employee.email}</div>
+          <div className=" text-600 text-1xl ">{props.employee.email}</div>
           <Score value={props.employee.score}></Score>
+          <div className="flex align-items-center   border-300 flex-wrap">
+            <div className="text-600 font-medium text-xl text-center">
+              <div className="text-400 font-light text-sm text-center">
+                Gender
+              </div>
+              {props.employee.gender.charAt(0).toUpperCase() +
+                props.employee.gender.slice(1)}
+            </div>
+            <Divider layout="vertical" />
+            <div className="text-600 font-medium text-xl text-center text-center">
+              <div className="text-400 font-light text-sm text-center">Age</div>
+              {DateHelper.getAge(props.employee.birthDate)}
+            </div>
+          </div>
+          <div className=" ">
+            <div className="text-600 font-medium text-xl mb-2 text-center">
+              <div className="text-400 font-light text-sm text-center">
+                Position
+              </div>
+              {props.employee.position}
+            </div>
+            <div className="text-600 font-medium text-xl text-center">
+              <div className="text-400 font-light text-sm text-center">
+                Recrutement Date
+              </div>
+              {DateHelper.getHumanizedDate(props.employee.recrutementDate)}
+              <span className="text-600 font-medium text-sm">
+                {" (" + props.employee.recrutementDate + ")"}{" "}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

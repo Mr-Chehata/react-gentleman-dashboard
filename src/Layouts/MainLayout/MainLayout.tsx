@@ -7,7 +7,7 @@ export default function MainLayout(props: any) {
   return (
     <div className={style.MainLayout}>
      <TopBar></TopBar>
-     <MainContent title={props.title}>{props.children}</MainContent>
+     <MainContent title={props.title} breadcrumb={props.breadcrumb}>{props.children}</MainContent>
     </div>
   );
 }

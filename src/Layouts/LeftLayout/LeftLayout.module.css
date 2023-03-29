@@ -39,3 +39,12 @@
     display: block;
   }
 }
+
+
+.Profile{
+  text-align: center;
+}
+
+.link{
+  text-decoration: none !important;
+}

@@ -1,25 +1,19 @@
 import React, { ChangeEvent, useState, useEffect, useMemo } from "react";
 
-import { EmployeesService } from "../../../services/EmployeesService";
-import {
-  DataView,
-  DataViewLayoutOptions,
-  DataViewLayoutType,
-  DataViewSortOrderType,
-} from "primereact/dataview";
+import { DataView, DataViewSortOrderType } from "primereact/dataview";
 import { Dropdown } from "primereact/dropdown";
-import { Employee, EmployeeInterface } from "../../../models/Employee";
+import { EmployeeInterface } from "../../../models/Employee";
 import styles from "./EmployeesList.module.css";
 import { CardItem } from "../../../components/Employee/CardItem/CardItem";
-import { ListItem } from "../../../components/Employee/ListItem/ListItem";
 import { InputText } from "primereact/inputtext";
-import { Button } from "primereact/button";
 
 export function EmployeesList({
-  isLoading = false,
+  status = "",
+  status_message = null,
   employees = [],
 }: {
-  isLoading: boolean;
+  status: string;
+  status_message: string | null;
   employees: EmployeeInterface[];
 }) {
   const [sortKey, setSortKey] = useState(1);
@@ -53,7 +47,7 @@ export function EmployeesList({
       return;
     }
 
-    return <CardItem employee={employee} isLoading={isLoading} />;
+    return <CardItem employee={employee} loading={status === "loading"} />;
   };
 
   const SearchedEmployees: EmployeeInterface[] = useMemo(
@@ -83,7 +77,6 @@ export function EmployeesList({
         </div>
         <div className="col-md-6 col-sm-12" style={{ textAlign: "right" }}>
           <div className="">
-            {/*    <Button icon="pi pi-search" className="ml-2" /> */}
             <span className="p-input-icon-left">
               <i className="pi pi-search" />
               <InputText
@@ -101,7 +94,22 @@ export function EmployeesList({
     );
   };
 
-  if (!isLoading) {
+  if (status === "loading") {
+    /* Loading status  */
+    return (
+      <div className="card mt-4">
+        <div className="p-grid grid p-nogutter grid-nogutter">
+          {(() => {
+            let td = [];
+            for (let i = 1; i <= 6; i++) {
+              td.push(<CardItem loading={true} key={i} />);
+            }
+            return td;
+          })()}
+        </div>
+      </div>
+    );
+  } else {
     return (
       <div className="card">
         <DataView
@@ -114,21 +122,6 @@ export function EmployeesList({
           sortOrder={sortOrder}
           sortField={sortField}
         />
-      </div>
-    );
-  } else {
-    /* Laoding status UI */
-    return (
-      <div className="card mt-3">
-        <div className="p-grid grid p-nogutter grid-nogutter">
-          {(() => {
-            let td = [];
-            for (let i = 1; i <= 6; i++) {
-              td.push(<CardItem isLoading={true} />);
-            }
-            return td;
-          })()}
-        </div>
       </div>
     );
   }

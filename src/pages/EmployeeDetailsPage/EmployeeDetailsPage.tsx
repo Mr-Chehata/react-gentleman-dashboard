@@ -1,77 +1,162 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import styles from "./EmployeeDetailsPage.module.css";
+import { useParams, useNavigate } from "react-router-dom";
+import { Message } from "primereact/message";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import {
   fetchEmployeeById,
   getEmployeesStore,
-} from "../../app/store/EmployeesSlice";
-import { Fieldset } from "primereact/fieldset";
-import { Divider } from "primereact/divider";
+} from "../../app/store/EmployeesStore";
+import { Card } from "primereact/card";
+import { Skeleton } from "primereact/skeleton";
+import { Chip } from "primereact/chip";
+import { Button } from "primereact/button";
+
+import DateHelper from "../../helpers/DateHelper";
+import styles from "./EmployeeDetailsPage.module.css";
 
 export function EmployeeDetailsPage() {
   const routerParams = useParams<{ employeeId: string }>();
+  const navigate = useNavigate();
   const employeesFetchState = useAppSelector(getEmployeesStore);
   const dispatch = useAppDispatch();
 
-  /* useEffect(() => {
-    if (routerParams.employeeId) {
-      employeesService
-        .getEmployeeById(routerParams.employeeId)
-        .then((data) => setEmployee(data));
-    }
-  }, []); */
+  function handleBackClick() {
+    navigate("/employees");
+  }
+
   useEffect(() => {
     if (routerParams.employeeId) {
       dispatch(fetchEmployeeById(routerParams.employeeId));
     }
   }, []);
-  return employeesFetchState.status != "loading" &&
-    employeesFetchState.employee ? (
-    <div className="p-3 border-1 surface-border surface-card border-round mt-3">
-      <div className="flex align-items-center gap-1">
-        <span className="text-2xl text-900 font-bold">Name : </span>
-        <span className="text-xl text-900">
-          {employeesFetchState.employee?.name}
-        </span>
+  if (employeesFetchState.status === "loading") {
+    return (
+      <div className="mt-4">
+        <Button
+          label="Back"
+          icon="pi pi-arrow-left"
+          className="p-button-outlined p-button-text p-button-plain mb-3"
+          onClick={handleBackClick}
+        />
+        <div className="field  p-3 mt-3">
+          <Skeleton className="mb-2"></Skeleton>
+          <Skeleton width="10rem" className="mb-2"></Skeleton>
+          <Skeleton width="5rem" className="mb-2"></Skeleton>
+          <Skeleton height="2rem" className="mb-2"></Skeleton>
+          <Skeleton width="10rem" height="4rem"></Skeleton>
+        </div>
       </div>
-      <Divider />
-      <div className="flex align-items-center gap-1">
-        <span className="text-2xl text-900 font-bold">Email : </span>
-        <span className="text-xl text-900">
-          {employeesFetchState.employee?.email}
-        </span>
+    );
+  } else if (employeesFetchState.status === "failed") {
+    return (
+      <div className="mt-4">
+        <Button
+          label="Back"
+          icon="pi pi-arrow-left"
+          className="p-button-outlined p-button-text p-button-plain mb-3"
+          onClick={handleBackClick}
+        />
+        <div className="card mt-4 p-4">
+          <Message
+            severity="error"
+            text={employeesFetchState.status_message}
+          ></Message>
+        </div>
       </div>
-      <Divider />
-      <div className="flex align-items-center gap-1">
-        <span className="text-2xl text-900 font-bold">Position : </span>
-        <span className="text-xl text-900">
-          {employeesFetchState.employee?.position}
-        </span>
+    );
+  } else {
+    return (
+      <div className="text-500 mt-4">
+        <Button
+          label="Back"
+          icon="pi pi-arrow-left"
+          className="p-button-outlined p-button-text p-button-plain mb-3"
+          onClick={handleBackClick}
+        />
+        <Card
+          title={employeesFetchState.employee?.name}
+          className="p-4 surface-border surface-card border-round "
+        >
+          <div className="text-500 mb-5">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s.
+          </div>
+          <ul className="list-none p-0 m-0">
+            <li className="flex align-items-center py-3 px-2  border-300 flex-wrap">
+              <div className="text-500 w-6 md:w-2 font-medium">Name</div>
+              <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                {employeesFetchState.employee?.name}
+              </div>
+              <div className="w-6 md:w-2 flex justify-content-end">
+                <i className="pi pi-user text-500 w-6 md:w-2 font-medium text-2xl "></i>
+              </div>
+            </li>
+            <li className="flex align-items-center py-3 px-2  border-300 flex-wrap">
+              <div className="text-500 w-6 md:w-2 font-medium">Email</div>
+              <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                {employeesFetchState.employee?.email}
+              </div>
+              <div className="w-6 md:w-2 flex justify-content-end">
+                <i className="pi pi-envelope text-500 w-6 md:w-2 font-medium text-2xl "></i>
+              </div>
+            </li>
+            <li className="flex align-items-center py-3 px-2  border-300 flex-wrap">
+              <div className="text-500 w-6 md:w-2 font-medium">Position</div>
+              <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                {employeesFetchState.employee?.position}
+              </div>
+              <div className="w-6 md:w-2 flex justify-content-end">
+                <i className="pi pi-briefcase text-500 w-6 md:w-2 font-medium text-2xl "></i>
+              </div>
+            </li>
+
+            <li className="flex align-items-center py-3 px-2  border-300 flex-wrap">
+              <div className="text-500 w-6 md:w-2 font-medium">Experience</div>
+              <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                {employeesFetchState?.employee?.recrutementDate
+                  ? DateHelper.getYearsNumber(
+                      employeesFetchState?.employee?.recrutementDate
+                    )
+                  : "" + " "}
+                years
+              </div>
+              <div className="w-6 md:w-2 flex justify-content-end">
+                <i className="pi pi-calendar text-500 w-6 md:w-2 font-medium text-2xl "></i>
+              </div>
+            </li>
+            <li className="flex align-items-center py-3 px-2  border-300 flex-wrap">
+              <div className="text-500 w-6 md:w-2 font-medium">Team</div>
+              <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                {employeesFetchState.employee?.team}
+              </div>
+              <div className="w-6 md:w-2 flex justify-content-end">
+                <i className="pi pi-users text-500 w-6 md:w-2 font-medium text-2xl "></i>
+              </div>
+            </li>
+            <li className="flex align-items-center py-3 px-2 border-300 flex-wrap">
+              <div className="text-500 w-6 md:w-2 font-medium">Projects </div>
+              <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                {employeesFetchState.employee?.projectsObjects?.map(
+                  (project, i) => {
+                    return (
+                      <Chip
+                        label={project.name}
+                        key={project.id}
+                        icon="pi pi-github"
+                        className="mr-2"
+                      />
+                    );
+                  }
+                )}
+              </div>
+              <div className="w-6 md:w-2 flex justify-content-end">
+                <i className="pi pi-th-large text-500 w-6 md:w-2 font-medium text-2xl "></i>
+              </div>
+            </li>
+          </ul>
+        </Card>
       </div>
-      <Divider />
-      <div className="flex align-items-center gap-1">
-        <span className="text-2xl text-900 font-bold">Team : </span>
-        <span className="text-xl text-900">
-          {employeesFetchState.employee?.team}
-        </span>
-      </div>
-      <Divider />
-      <div className="flex align-items-center gap-1">
-        <span className="text-2xl text-900 font-bold">
-          Seniority in the company :
-        </span>
-        <span className="text-xl text-900">
-          {/*  {getYears(employeesFetchState.employee?.recrutementDate)} */}
-        </span>
-      </div>
-      <Divider />
-      <div className="flex align-items-center gap-1">
-        <span className="text-2xl text-900 font-bold">Projects : </span>
-        <ul className="text-xl text-900"></ul>
-      </div>
-    </div>
-  ) : (
-    <>{"none"}</>
-  );
+    );
+  }
 }

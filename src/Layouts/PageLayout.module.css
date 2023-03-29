@@ -1,9 +1,4 @@
-.EditorPage {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-/*   overflow: hidden !important; */
-}
+
 .PageLayout {
   display: flex;
   flex-grow: 1;

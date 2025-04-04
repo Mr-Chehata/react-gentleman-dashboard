@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import style from "./App.module.css";
 
-import PageLayout from "./layouts/PageLayout";
+import PageLayout from "./Layouts/PageLayout";
 import { EmployeesPage } from "./pages/EmployeesPage/EmployeesPage";
 
 import { EmployeeDetailsPage } from "./pages/EmployeeDetailsPage/EmployeeDetailsPage";

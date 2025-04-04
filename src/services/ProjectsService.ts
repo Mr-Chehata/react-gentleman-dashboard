@@ -1,5 +1,5 @@
 import API from "../API";
-import { ProjectInterface } from "../models/Project";
+import { ProjectInterface } from "../Models/Project";
 
 export class ProjectsService {
   getProjectById(id: string): Promise<ProjectInterface> {

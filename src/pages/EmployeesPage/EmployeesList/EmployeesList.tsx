@@ -2,9 +2,9 @@ import React, { ChangeEvent, useState, useEffect, useMemo } from "react";
 
 import { DataView, DataViewSortOrderType } from "primereact/dataview";
 import { Dropdown } from "primereact/dropdown";
-import { EmployeeInterface } from "../../../models/Employee";
+import { EmployeeInterface } from "../../../Models/Employee";
 import styles from "./EmployeesList.module.css";
-import { CardItem } from "../../../components/Employee/CardItem/CardItem";
+import { CardItem } from "../../../Components/Employee/CardItem/CardItem";
 import { InputText } from "primereact/inputtext";
 
 export function EmployeesList({

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { EmployeeInterface } from "../../models/Employee";
-import { EmployeesService } from "../../services/EmployeesService";
+import { EmployeeInterface } from "../../Models/Employee";
+import { EmployeesService } from "../../Services/EmployeesService";
 import { RootState, AppThunk } from "../store";
 /* import { fetchCount } from './counterAPI'; */
 

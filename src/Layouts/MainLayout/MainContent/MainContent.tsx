@@ -1,6 +1,6 @@
 import style from "./MainContent.module.css";
 
-import { Breadcrumb } from "../../../components/Breadcrumb/Breadcrumb";
+import { Breadcrumb } from "../../../Components/Breadcrumb/Breadcrumb";
 
 export default function MainContent(props: any) {
   const start = (

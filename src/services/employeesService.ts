@@ -1,5 +1,5 @@
 import API from "../API";
-import { EmployeeInterface } from "../models/Employee";
+import { EmployeeInterface } from "../Models/Employee";
 import { ProjectsService } from "./ProjectsService";
 
 export class EmployeesService {

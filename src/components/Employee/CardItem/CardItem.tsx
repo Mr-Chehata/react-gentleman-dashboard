@@ -6,7 +6,7 @@ import styles from "./CardItem.module.css";
 import { Score } from "../Score/Score";
 import {  Link, useNavigate } from "react-router-dom";
 import { Skeleton } from "primereact/skeleton";
-import DateHelper from "../../../helpers/DateHelper";
+import DateHelper from "../../../Helpers/DateHelper";
 
 export function CardItem(props: any) {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { EmployeeInterface } from "../../models/Employee";
-import { EmployeesService } from "../../services/EmployeesService";
+import { EmployeeInterface } from "../../Models/Employee";
+import { EmployeesService } from "../../Services/EmployeesService";
 import { RootState } from "../store";
 
 export interface EmployeesFetchState {

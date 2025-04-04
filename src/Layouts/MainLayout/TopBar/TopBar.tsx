@@ -1,6 +1,6 @@
 import style from "./TopBar.module.css";
 import { InputText } from "primereact/inputtext";
-import Navbar from "../../../components/Navbar/Navbar";
+import Navbar from "../../../Components/Navbar/Navbar";
 import React, { useState, useRef } from "react";
 import { Toolbar } from "primereact/toolbar";
 import { Button } from "primereact/button";

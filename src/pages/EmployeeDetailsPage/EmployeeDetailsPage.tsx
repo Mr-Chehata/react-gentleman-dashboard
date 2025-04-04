@@ -11,7 +11,7 @@ import { Skeleton } from "primereact/skeleton";
 import { Chip } from "primereact/chip";
 import { Button } from "primereact/button";
 
-import DateHelper from "../../helpers/DateHelper";
+import DateHelper from "../../Helpers/DateHelper";
 import styles from "./EmployeeDetailsPage.module.css";
 
 export function EmployeeDetailsPage() {

@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../Components/Navbar/Navbar";
 import { Avatar } from "primereact/avatar";
 import { Divider } from "primereact/divider";
 import style from "./LeftLayout.module.css";

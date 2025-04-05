@@ -1,166 +1,456 @@
 {
-  "employees": [
-    {
-      "id": 1,
-      "birthDate": "1991-11-07",
-      "email": "leanne.graham@johns-group.com",
-      "name": "Leanne Graham",
-      "position": "FullStack Developer",
-      "projects": [1, 2],
-      "recrutementDate": "2017-06-15",
-      "gender": "female",
-      "score": 78,
-      "team": "A"
-   },
-   {
-      "id": 2,
-      "birthDate": "1993-04-13",
-      "email": "andrea.skiles@johns-group.com",
-      "name": "Andrea Skiles",
-      "position": "DevOps Engineer",
-      "projects": [5, 6],
-      "recrutementDate": "2015-02-01",
-      "gender": "female",
-      "score": 82,
-      "team": "D"
-   },
-   {
-      "id": 3,
-      "birthDate": "1994-02-11",
-      "email": "nicholas.runolfsdottir@johns-group.com",
-      "name": "Nicholas Runolfsdottir",
-      "projects": [7],
-      "position": "FrontEnd Developer",
-      "recrutementDate": "2021-01-01",
-      "gender": "male",
-      "score": 23,
-      "team": "C"
-   },
-   {
-      "id": 4,
-      "birthDate": "1995-12-10",
-      "email": "ervin.howell@johns-group.com",
-      "name": "Ervin Howell",
-      "position": "FrontEnd Developer",
-      "projects": [1],
-      "recrutementDate": "2019-07-01",
-      "gender": "male",
-      "score": 55,
-      "team": "A"
-   },
-   {
-      "id": 5,
-      "birthDate": "1988-05-19",
-      "email": "clementina.bauch@johns-group.com",
-      "name": "Clementina Bauch",
-      "position": "FullStack Developer",
-      "projects": [3, 4],
-      "recrutementDate": "2015-08-20",
-      "gender": "female",
-      "score": 90,
-      "team": "B"
-   },
-   {
-      "id": 6,
-      "birthDate": "1987-10-03",
-      "email": "dennis.schulist@johns-group.com",
-      "name": "Dennis Schulist",
-      "position": "FullStack Developer",
-      "projects": [7, 8],
-      "recrutementDate": "2014-06-12",
-      "gender": "male",
-      "score": 94,
-      "team": "C"
-   },
-   {
-      "id": 7,
-      "birthDate": "1994-07-28",
-      "email": "diego.wesley@johns-group.com",
-      "name": "Diego Wesley",
-      "position": "DevOps Engineer",
-      "projects": [5, 6],
-      "recrutementDate": "2018-03-03",
-      "gender": "male",
-      "score": 69,
-      "team": "D"
-   },
-   {
-      "id": 8,
-      "birthDate": "1990-01-07",
-      "email": "glenna.reichert@johns-group.com",
-      "name": "Glenna Reichert",
-      "position": "FullStack Developer",
-      "projects": [3, 4],
-      "recrutementDate": "2016-11-08",
-      "gender": "female",
-      "score": 79,
-      "team": "B"
-   },
-   {
-      "id": 9,
-      "birthDate": "1992-02-15",
-      "email": "emma.weissnat@johns-group.com",
-      "name": "Emma Weissnat",
-      "position": "FullStack Developer",
-      "projects": [7, 8],
-      "recrutementDate": "2016-12-10",
-      "gender": "female",
-      "score": 70,
-      "team": "C"
-   },
-   {
-      "id": 10,
-      "birthDate": "1992-05-16",
-      "email": "grace.harrison@johns-group.com",
-      "name": "Grace Harrison",
-      "position": "FullStack Developer",
-      "recrutementDate": "2016-11-21",
-      "projects": [1, 2],
-      "gender": "female",
-      "score": 72,
-      "team": "A"
-   }
-  ],
-  "projects": [
+   "employees": [
      {
-        "id": 1,
-        "name": "E-commerce front",
-        "repo": "https://gitlab.com/johns-group/e-commerce-front"
+       "id": 1,
+       "birthDate": "1991-11-07",
+       "email": "leanne.graham@johns-group.com",
+       "name": "Leanne Graham",
+       "position": "FullStack Developer",
+       "projects": [1, 2],
+       "recrutementDate": "2017-06-15",
+       "gender": "female",
+       "score": 78,
+       "team": "A",
+       "summary": "Leanne is a seasoned FullStack Developer with over 7 years at Johns Group, specializing in e-commerce solutions. She excels in both frontend and backend development, contributing significantly to the company's online platform success."
      },
      {
-        "id": 2,
-        "name": "E-commerce api",
-        "repo": "https://gitlab.com/johns-group/e-commerce-api"
+       "id": 2,
+       "birthDate": "1993-04-13",
+       "email": "andrea.skiles@johns-group.com",
+       "name": "Andrea Skiles",
+       "position": "DevOps Engineer",
+       "projects": [5, 6],
+       "recrutementDate": "2015-02-01",
+       "gender": "female",
+       "score": 82,
+       "team": "D",
+       "summary": "Andrea brings a decade of DevOps expertise to Team D, focusing on cloud infrastructure and CI/CD pipelines. Her work on AWS and Jenkins has streamlined deployment processes across multiple projects."
      },
      {
-        "id": 3,
-        "name": "Administration panel",
-        "repo": "https://gitlab.com/johns-group/administration-panel"
+       "id": 3,
+       "birthDate": "1994-02-11",
+       "email": "nicholas.runolfsdottir@johns-group.com",
+       "name": "Nicholas Runolfsdottir",
+       "position": "FrontEnd Developer",
+       "projects": [7],
+       "recrutementDate": "2021-01-01",
+       "gender": "male",
+       "score": 23,
+       "team": "C",
+       "summary": "Nicholas is a skilled FrontEnd Developer who joined in 2021, bringing fresh perspectives to sales analytics interfaces. He's quickly becoming known for his clean, user-friendly designs."
      },
      {
-        "id": 4,
-        "name": "Administration api",
-        "repo": "https://gitlab.com/johns-group/administration-api"
+       "id": 4,
+       "birthDate": "1995-12-10",
+       "email": "ervin.howell@johns-group.com",
+       "name": "Ervin Howell",
+       "position": "FrontEnd Developer",
+       "projects": [1],
+       "recrutementDate": "2019-07-01",
+       "gender": "male",
+       "score": 55,
+       "team": "A",
+       "summary": "Ervin has been enhancing e-commerce frontends for over 5 years at Johns Group. His focus on responsive design has improved customer experience on Team A's flagship project."
      },
      {
-        "id": 5,
-        "name": "AWS platform",
-        "repo": "https://gitlab.com/johns-group/aws-platform"
+       "id": 5,
+       "birthDate": "1988-05-19",
+       "email": "clementina.bauch@johns-group.com",
+       "name": "Clementina Bauch",
+       "position": "FullStack Developer",
+       "projects": [3, 4],
+       "recrutementDate": "2015-08-20",
+       "gender": "female",
+       "score": 90,
+       "team": "B",
+       "summary": "With nearly a decade at Johns Group, Clementina is a top-performing FullStack Developer. She leads development on administration tools, delivering robust solutions for Team B."
      },
      {
-        "id": 6,
-        "name": "Jenkins deployment",
-        "repo": "https://gitlab.com/johns-group/jenkins-deployment"
+       "id": 6,
+       "birthDate": "1987-10-03",
+       "email": "dennis.schulist@johns-group.com",
+       "name": "Dennis Schulist",
+       "position": "FullStack Developer",
+       "projects": [7, 8],
+       "recrutementDate": "2014-06-12",
+       "gender": "male",
+       "score": 94,
+       "team": "C",
+       "summary": "Dennis is a veteran FullStack Developer with over 10 years of experience, excelling in sales analytics systems. His technical leadership has been pivotal for Team C's success."
      },
      {
-        "id": 7,
-        "name": "Sales analytics front",
-        "repo": "https://gitlab.com/johns-group/sales-analytics-front"
+       "id": 7,
+       "birthDate": "1994-07-28",
+       "email": "diego.wesley@johns-group.com",
+       "name": "Diego Wesley",
+       "position": "DevOps Engineer",
+       "projects": [5, 6],
+       "recrutementDate": "2018-03-03",
+       "gender": "male",
+       "score": 69,
+       "team": "D",
+       "summary": "Diego has been a key DevOps Engineer for 7 years, specializing in cloud and deployment solutions. His contributions ensure smooth operations for Team D's infrastructure projects."
      },
      {
-        "id": 8,
-        "name": "Sales analytics back",
-        "repo": "https://gitlab.com/johns-group/sales-analytics-back"
+       "id": 8,
+       "birthDate": "1990-01-07",
+       "email": "glenna.reichert@johns-group.com",
+       "name": "Glenna Reichert",
+       "position": "FullStack Developer",
+       "projects": [3, 4],
+       "recrutementDate": "2016-11-08",
+       "gender": "female",
+       "score": 79,
+       "team": "B",
+       "summary": "Glenna is an experienced FullStack Developer with 8+ years at Johns Group, focusing on administration systems. She brings reliability and innovation to Team B's projects."
+     },
+     {
+       "id": 9,
+       "birthDate": "1992-02-15",
+       "email": "emma.weissnat@johns-group.com",
+       "name": "Emma Weissnat",
+       "position": "FullStack Developer",
+       "projects": [7, 8],
+       "recrutementDate": "2016-12-10",
+       "gender": "female",
+       "score": 70,
+       "team": "C",
+       "summary": "Emma has spent over 8 years as a FullStack Developer, enhancing sales analytics tools. Her work on Team C combines technical skill with a keen eye for detail."
+     },
+     {
+       "id": 10,
+       "birthDate": "1992-05-16",
+       "email": "grace.harrison@johns-group.com",
+       "name": "Grace Harrison",
+       "position": "FullStack Developer",
+       "projects": [1, 2],
+       "recrutementDate": "2016-11-21",
+       "gender": "female",
+       "score": 72,
+       "team": "A",
+       "summary": "Grace is a dedicated FullStack Developer with 8 years at Johns Group, working on e-commerce platforms. Her contributions strengthen Team A's core offerings."
+     },
+     {
+       "id": 11,
+       "birthDate": "1989-09-22",
+       "email": "marcus.chen@johns-group.com",
+       "name": "Marcus Chen",
+       "position": "Backend Developer",
+       "projects": [9, 10],
+       "recrutementDate": "2018-04-15",
+       "gender": "male",
+       "score": 85,
+       "team": "E",
+       "summary": "Marcus is a Backend Developer with 7 years of experience, specializing in payment and inventory systems. His robust solutions support Team E's backend infrastructure."
+     },
+     {
+       "id": 12,
+       "birthDate": "1996-03-30",
+       "email": "sophia.martinez@johns-group.com",
+       "name": "Sophia Martinez",
+       "position": "UI/UX Designer",
+       "projects": [11, 1],
+       "recrutementDate": "2020-09-01",
+       "gender": "female",
+       "score": 67,
+       "team": "A",
+       "summary": "Sophia joined as a UI/UX Designer in 2020, bringing 4+ years of design expertise to e-commerce and mobile interfaces. She enhances Team A's user experiences."
+     },
+     {
+       "id": 13,
+       "birthDate": "1990-12-05",
+       "email": "jake.peralta@johns-group.com",
+       "name": "Jake Peralta",
+       "position": "Security Engineer",
+       "projects": [12],
+       "recrutementDate": "2017-11-20",
+       "gender": "male",
+       "score": 88,
+       "team": "F",
+       "summary": "Jake has been a Security Engineer for over 7 years, focusing on system protection. His work on Team F ensures robust security for critical projects."
+     },
+     {
+       "id": 14,
+       "birthDate": "1993-08-17",
+       "email": "olivia.benson@johns-group.com",
+       "name": "Olivia Benson",
+       "position": "Data Scientist",
+       "projects": [9, 10],
+       "recrutementDate": "2019-02-14",
+       "gender": "female",
+       "score": 91,
+       "team": "G",
+       "summary": "Olivia is a Data Scientist with 6 years at Johns Group, analyzing payment and inventory data. Her insights drive Team G's strategic decisions."
+     },
+     {
+       "id": 15,
+       "birthDate": "1985-06-25",
+       "email": "thomas.rivera@johns-group.com",
+       "name": "Thomas Rivera",
+       "position": "Project Manager",
+       "projects": [1, 3, 5],
+       "recrutementDate": "2013-10-10",
+       "gender": "male",
+       "score": 83,
+       "team": "A",
+       "summary": "Thomas is a seasoned Project Manager with over 11 years of leadership experience. He oversees multiple key projects for Team A with exceptional coordination."
+     },
+     {
+       "id": 16,
+       "birthDate": "1997-01-15",
+       "email": "liam.jackson@johns-group.com",
+       "name": "Liam Jackson",
+       "position": "Junior Developer",
+       "projects": [2],
+       "recrutementDate": "2023-03-01",
+       "gender": "male",
+       "score": 60,
+       "team": "B",
+       "summary": "Liam joined as a Junior Developer in 2023, contributing to e-commerce APIs. He's quickly learning and growing within Team B."
+     },
+     {
+       "id": 17,
+       "birthDate": "1988-04-22",
+       "email": "mia.rodriguez@johns-group.com",
+       "name": "Mia Rodriguez",
+       "position": "QA Engineer",
+       "projects": [4, 6],
+       "recrutementDate": "2016-05-10",
+       "gender": "female",
+       "score": 76,
+       "team": "D",
+       "summary": "Mia has been a QA Engineer for 8+ years, ensuring quality in admin APIs and deployments. Her meticulous testing benefits Team D's deliverables."
+     },
+     {
+       "id": 18,
+       "birthDate": "1995-06-18",
+       "email": "ethan.wilson@johns-group.com",
+       "name": "Ethan Wilson",
+       "position": "Mobile Developer",
+       "projects": [11],
+       "recrutementDate": "2020-11-15",
+       "gender": "male",
+       "score": 73,
+       "team": "A",
+       "summary": "Ethan is a Mobile Developer with 4+ years of experience, focusing on app interfaces. He enhances Team A's mobile presence with innovative solutions."
+     },
+     {
+       "id": 19,
+       "birthDate": "1991-03-09",
+       "email": "ava.thompson@johns-group.com",
+       "name": "Ava Thompson",
+       "position": "FullStack Developer",
+       "projects": [7, 8],
+       "recrutementDate": "2018-08-22",
+       "gender": "female",
+       "score": 87,
+       "team": "C",
+       "summary": "Ava has been a FullStack Developer for over 6 years, excelling in sales analytics. Her versatile skills strengthen Team C's project outcomes."
+     },
+     {
+       "id": 20,
+       "birthDate": "1986-11-30",
+       "email": "noah.martin@johns-group.com",
+       "name": "Noah Martin",
+       "position": "Systems Architect",
+       "projects": [5, 9],
+       "recrutementDate": "2014-03-05",
+       "gender": "male",
+       "score": 92,
+       "team": "E",
+       "summary": "Noah is a Systems Architect with 11 years at Johns Group, designing robust cloud and payment systems. His expertise guides Team E's technical direction."
+     },
+     {
+       "id": 21,
+       "birthDate": "1994-09-12",
+       "email": "isabella.lee@johns-group.com",
+       "name": "Isabella Lee",
+       "position": "Backend Developer",
+       "projects": [10],
+       "recrutementDate": "2019-10-01",
+       "gender": "female",
+       "score": 80,
+       "team": "E",
+       "summary": "Isabella has been a Backend Developer for 5+ years, focusing on inventory systems. Her reliable code supports Team E's backend operations."
+     },
+     {
+       "id": 22,
+       "birthDate": "1998-02-25",
+       "email": "james.white@johns-group.com",
+       "name": "James White",
+       "position": "Junior Developer",
+       "projects": [3],
+       "recrutementDate": "2022-06-15",
+       "gender": "male",
+       "score": 65,
+       "team": "B",
+       "summary": "James joined as a Junior Developer in 2022, contributing to admin panels. He's gaining valuable experience on Team B."
+     },
+     {
+       "id": 23,
+       "birthDate": "1990-07-08",
+       "email": "emily.brown@johns-group.com",
+       "name": "Emily Brown",
+       "position": "DevOps Engineer",
+       "projects": [6, 12],
+       "recrutementDate": "2017-01-20",
+       "gender": "female",
+       "score": 84,
+       "team": "F",
+       "summary": "Emily is a DevOps Engineer with 8 years of experience, specializing in deployments and security. She drives efficiency for Team F."
+     },
+     {
+       "id": 24,
+       "birthDate": "1989-05-14",
+       "email": "william.davis@johns-group.com",
+       "name": "William Davis",
+       "position": "Project Manager",
+       "projects": [7, 8, 9],
+       "recrutementDate": "2015-09-10",
+       "gender": "male",
+       "score": 89,
+       "team": "C",
+       "summary": "William has managed projects for nearly 10 years, overseeing analytics and payment systems. His leadership keeps Team C on track."
+     },
+     {
+       "id": 25,
+       "birthDate": "1996-10-03",
+       "email": "charlotte.moore@johns-group.com",
+       "name": "Charlotte Moore",
+       "position": "UI/UX Designer",
+       "projects": [11, 1],
+       "recrutementDate": "2021-04-01",
+       "gender": "female",
+       "score": 71,
+       "team": "A",
+       "summary": "Charlotte joined as a UI/UX Designer in 2021, enhancing mobile and e-commerce interfaces. Her designs elevate Team A's user satisfaction."
+     },
+     {
+       "id": 26,
+       "birthDate": "1992-12-19",
+       "email": "benjamin.taylor@johns-group.com",
+       "name": "Benjamin Taylor",
+       "position": "FullStack Developer",
+       "projects": [2, 4],
+       "recrutementDate": "2018-02-15",
+       "gender": "male",
+       "score": 77,
+       "team": "B",
+       "summary": "Benjamin has been a FullStack Developer for 7 years, working on APIs and admin tools. His versatility benefits Team B's projects."
+     },
+     {
+       "id": 27,
+       "birthDate": "1987-08-27",
+       "email": "amelia.jackson@johns-group.com",
+       "name": "Amelia Jackson",
+       "position": "Data Scientist",
+       "projects": [9, 10],
+       "recrutementDate": "2016-07-01",
+       "gender": "female",
+       "score": 93,
+       "team": "G",
+       "summary": "Amelia is a Data Scientist with 8+ years of experience, analyzing payment and inventory data. Her expertise powers Team G's insights."
+     },
+     {
+       "id": 28,
+       "birthDate": "1993-03-06",
+       "email": "henry.miller@johns-group.com",
+       "name": "Henry Miller",
+       "position": "Security Engineer",
+       "projects": [12],
+       "recrutementDate": "2019-12-10",
+       "gender": "male",
+       "score": 86,
+       "team": "F",
+       "summary": "Henry has been a Security Engineer for 5+ years, strengthening system security. His vigilance protects Team F's critical infrastructure."
+     },
+     {
+       "id": 29,
+       "birthDate": "1995-01-22",
+       "email": "sophie.clark@johns-group.com",
+       "name": "Sophie Clark",
+       "position": "Mobile Developer",
+       "projects": [11],
+       "recrutementDate": "2020-03-15",
+       "gender": "female",
+       "score": 74,
+       "team": "A",
+       "summary": "Sophie joined as a Mobile Developer in 2020, focusing on app interfaces. She enhances Team A's mobile solutions with creativity."
+     },
+     {
+       "id": 30,
+       "birthDate": "1988-09-11",
+       "email": "oliver.evans@johns-group.com",
+       "name": "Oliver Evans",
+       "position": "Backend Developer",
+       "projects": [8, 10],
+       "recrutementDate": "2017-05-20",
+       "gender": "male",
+       "score": 81,
+       "team": "E",
+       "summary": "Oliver has been a Backend Developer for 7+ years, building analytics and inventory systems. His solid code supports Team E's operations."
      }
-  ]
-}
+   ],
+   "projects": [
+     {
+       "id": 1,
+       "name": "E-commerce front",
+       "repo": "https://gitlab.com/johns-group/e-commerce-front"
+     },
+     {
+       "id": 2,
+       "name": "E-commerce api",
+       "repo": "https://gitlab.com/johns-group/e-commerce-api"
+     },
+     {
+       "id": 3,
+       "name": "Administration panel",
+       "repo": "https://gitlab.com/johns-group/administration-panel"
+     },
+     {
+       "id": 4,
+       "name": "Administration api",
+       "repo": "https://gitlab.com/johns-group/administration-api"
+     },
+     {
+       "id": 5,
+       "name": "AWS platform",
+       "repo": "https://gitlab.com/johns-group/aws-platform"
+     },
+     {
+       "id": 6,
+       "name": "Jenkins deployment",
+       "repo": "https://gitlab.com/johns-group/jenkins-deployment"
+     },
+     {
+       "id": 7,
+       "name": "Sales analytics front",
+       "repo": "https://gitlab.com/johns-group/sales-analytics-front"
+     },
+     {
+       "id": 8,
+       "name": "Sales analytics back",
+       "repo": "https://gitlab.com/johns-group/sales-analytics-back"
+     },
+     {
+       "id": 9,
+       "name": "Payment gateway",
+       "repo": "https://gitlab.com/johns-group/payment-gateway"
+     },
+     {
+       "id": 10,
+       "name": "Inventory system",
+       "repo": "https://gitlab.com/johns-group/inventory-system"
+     },
+     {
+       "id": 11,
+       "name": "Mobile app UI",
+       "repo": "https://gitlab.com/johns-group/mobile-app-ui"
+     },
+     {
+       "id": 12,
+       "name": "Security monitor",
+       "repo": "https://gitlab.com/johns-group/security-monitor"
+     }
+   ]
+ }

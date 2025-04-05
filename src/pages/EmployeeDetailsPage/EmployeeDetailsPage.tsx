@@ -5,7 +5,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import {
   fetchEmployeeById,
   getEmployeesStore,
-} from "../../app/store/EmployeesStore";
+} from "../../app/store/EmployeesSlice";
 import { Card } from "primereact/card";
 import { Skeleton } from "primereact/skeleton";
 import { Chip } from "primereact/chip";

@@ -8,7 +8,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import {
   fetchEmployees,
   getEmployeesStore,
-} from "../../app/store/EmployeesStore";
+} from "../../app/store/EmployeesSlice";
 import { Message } from "primereact/message";
 
 export function EmployeesPage() {

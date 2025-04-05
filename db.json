@@ -312,19 +312,7 @@
        "team": "C",
        "summary": "William has managed projects for nearly 10 years, overseeing analytics and payment systems. His leadership keeps Team C on track."
      },
-     {
-       "id": 25,
-       "birthDate": "1996-10-03",
-       "email": "charlotte.moore@johns-group.com",
-       "name": "Charlotte Moore",
-       "position": "UI/UX Designer",
-       "projects": [11, 1],
-       "recrutementDate": "2021-04-01",
-       "gender": "female",
-       "score": 71,
-       "team": "A",
-       "summary": "Charlotte joined as a UI/UX Designer in 2021, enhancing mobile and e-commerce interfaces. Her designs elevate Team A's user satisfaction."
-     },
+     
      {
        "id": 26,
        "birthDate": "1992-12-19",
@@ -338,45 +326,7 @@
        "team": "B",
        "summary": "Benjamin has been a FullStack Developer for 7 years, working on APIs and admin tools. His versatility benefits Team B's projects."
      },
-     {
-       "id": 27,
-       "birthDate": "1987-08-27",
-       "email": "amelia.jackson@johns-group.com",
-       "name": "Amelia Jackson",
-       "position": "Data Scientist",
-       "projects": [9, 10],
-       "recrutementDate": "2016-07-01",
-       "gender": "female",
-       "score": 93,
-       "team": "G",
-       "summary": "Amelia is a Data Scientist with 8+ years of experience, analyzing payment and inventory data. Her expertise powers Team G's insights."
-     },
-     {
-       "id": 28,
-       "birthDate": "1993-03-06",
-       "email": "henry.miller@johns-group.com",
-       "name": "Henry Miller",
-       "position": "Security Engineer",
-       "projects": [12],
-       "recrutementDate": "2019-12-10",
-       "gender": "male",
-       "score": 86,
-       "team": "F",
-       "summary": "Henry has been a Security Engineer for 5+ years, strengthening system security. His vigilance protects Team F's critical infrastructure."
-     },
-     {
-       "id": 29,
-       "birthDate": "1995-01-22",
-       "email": "sophie.clark@johns-group.com",
-       "name": "Sophie Clark",
-       "position": "Mobile Developer",
-       "projects": [11],
-       "recrutementDate": "2020-03-15",
-       "gender": "female",
-       "score": 74,
-       "team": "A",
-       "summary": "Sophie joined as a Mobile Developer in 2020, focusing on app interfaces. She enhances Team A's mobile solutions with creativity."
-     },
+     
      {
        "id": 30,
        "birthDate": "1988-09-11",

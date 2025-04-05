@@ -11,9 +11,9 @@ export default function LeftLayout() {
         <Avatar
           shape="circle"
           size="xlarge"
-          image="https://media.licdn.com/dms/image/C4E03AQHJgWxDnfeIUg/profile-displayphoto-shrink_800_800/0/1600434992994?e=1683763200&v=beta&t=FLnuNxTEnyWAwoAPQExE4vJ2DLvs16OATl-iuvw22jo"
+          image="https://avatar.iran.liara.run/public/boy"
         />
-        <div className="text-400 font-medium text-xl"> Bilel chehata </div>
+        <div className="text-400 font-medium text-xl"> Bilel Chehata </div>
         <Divider layout="horizontal" />
       </div>
       <div className="mb-3 mt-3">

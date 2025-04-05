@@ -78,9 +78,7 @@ export function EmployeeDetailsPage() {
           className="p-4 surface-border surface-card border-round "
         >
           <div className="text-500 mb-5">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          {employeesFetchState.employee?.summary}
           </div>
           <ul className="list-none p-0 m-0">
             <li className="flex align-items-center py-3 px-2  border-300 flex-wrap">
@@ -114,12 +112,12 @@ export function EmployeeDetailsPage() {
             <li className="flex align-items-center py-3 px-2  border-300 flex-wrap">
               <div className="text-500 w-6 md:w-2 font-medium">Experience</div>
               <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-                {employeesFetchState?.employee?.recrutementDate
+                {(employeesFetchState?.employee?.recrutementDate
                   ? DateHelper.getYearsNumber(
                       employeesFetchState?.employee?.recrutementDate
                     )
-                  : "" + " "}
-                years
+                  : "") + " "}
+                 years
               </div>
               <div className="w-6 md:w-2 flex justify-content-end">
                 <i className="pi pi-calendar text-500 w-6 md:w-2 font-medium text-2xl "></i>
@@ -137,7 +135,7 @@ export function EmployeeDetailsPage() {
             <li className="flex align-items-center py-3 px-2 border-300 flex-wrap">
               <div className="text-500 w-6 md:w-2 font-medium">Projects </div>
               <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-                {employeesFetchState.employee?.projectsObjects?.map(
+                {employeesFetchState.employee?.projects?.map(
                   (project, i) => {
                     return (
                       <Chip

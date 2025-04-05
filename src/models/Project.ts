@@ -1,12 +1,6 @@
-export interface ProjectInterface {
-  id: string;
-  name: string;
-  repo: string;
-}
+import ProjectInterface from "./ProjectInterface";
 
-
-/* @note For future use */
-export class Project implements ProjectInterface{
+export class Project implements ProjectInterface {
   id: string;
   name: string;
   repo: string;

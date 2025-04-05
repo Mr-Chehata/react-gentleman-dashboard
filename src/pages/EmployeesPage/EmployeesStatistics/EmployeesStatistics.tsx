@@ -1,10 +1,11 @@
 import { useMemo } from "react";
 import { Avatar } from "primereact/avatar";
 import { AvatarGroup } from "primereact/avatargroup";
-import { EmployeeInterface } from "../../../Models/Employee";
+
 import styles from "./EmployeesStatistics.module.css";
 import DateHelper from "../../../Helpers/DateHelper";
 import { Skeleton } from "primereact/skeleton";
+import EmployeeInterface from "../../../Models/EmployeeInterface";
 
 export function EmployeesStatistics({
   status = "",

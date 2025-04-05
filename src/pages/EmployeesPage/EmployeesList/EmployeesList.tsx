@@ -2,10 +2,11 @@ import React, { ChangeEvent, useState, useEffect, useMemo } from "react";
 
 import { DataView, DataViewSortOrderType } from "primereact/dataview";
 import { Dropdown } from "primereact/dropdown";
-import { EmployeeInterface } from "../../../Models/Employee";
+
 import styles from "./EmployeesList.module.css";
 import { CardItem } from "../../../Components/Employee/CardItem/CardItem";
 import { InputText } from "primereact/inputtext";
+import EmployeeInterface from "../../../Models/EmployeeInterface";
 
 export function EmployeesList({
   status = "",

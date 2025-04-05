@@ -9,6 +9,7 @@ import { Skeleton } from "primereact/skeleton";
 import DateHelper from "../../../Helpers/DateHelper";
 
 export function CardItem(props: any) {
+  
   const navigate = useNavigate();
 
   function handleShowClick() {
@@ -35,10 +36,7 @@ export function CardItem(props: any) {
         </div>
         <div className="flex flex-column align-items-center gap-3 py-5">
           <Avatar
-            image={
-              "https://api.lorem.space/image/face?w=200&h=200&hash=" +
-              Math.random().toString(8).slice(2)
-            }
+            image={`https://avatar.iran.liara.run/username?username=${(props.employee.name || "").split(" ").join("")}`} 
             size="xlarge"
             shape="circle"
           />

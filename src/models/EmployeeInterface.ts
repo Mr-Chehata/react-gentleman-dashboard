@@ -1,12 +1,13 @@
-import Project from "./ProjectInterface";
+import ProjectInterface from "./ProjectInterface";
 
-export default interface Employee {
-  id: number;
+export default interface EmployeeInterface {
+  id: string;
   birthDate: string;
   email: string;
   name: string;
+  summary: string | null;
   position: string;
-  projects: Project[];
+  projects: ProjectInterface[]; 
   recrutementDate: string;
   gender: string;
   score: number;

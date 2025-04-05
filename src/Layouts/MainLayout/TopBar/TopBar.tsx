@@ -14,7 +14,7 @@ export default function TopBar(props: any) {
   const toast = useRef(null);
   const items = [
     {
-      label: "Light(not ready)",
+      label: "Light",
       icon: "pi pi-sun",
     },
     {
@@ -68,7 +68,7 @@ export default function TopBar(props: any) {
       <Divider layout="vertical" />
       <Chip
         label="Bilel Chehata"
-        image="https://media.licdn.com/dms/image/C4E03AQHJgWxDnfeIUg/profile-displayphoto-shrink_800_800/0/1600434992994?e=1683763200&v=beta&t=FLnuNxTEnyWAwoAPQExE4vJ2DLvs16OATl-iuvw22jo"
+        image="https://avatar.iran.liara.run/public/boy"
       />
     </React.Fragment>
   );

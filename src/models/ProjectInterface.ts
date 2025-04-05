@@ -1,5 +1,5 @@
-export default interface ProjectInterface{
-  id: number;
+export default interface ProjectInterface {
+  id: string;
   name: string;
   repo: string;
 }

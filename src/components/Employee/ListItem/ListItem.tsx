@@ -4,7 +4,7 @@ import { Tag } from "primereact/tag";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import styles from "./ListItem.module.css";
-import { EmployeeInterface } from "../../../Models/Employee";
+import EmployeeInterface from "../../../Models/EmployeeInterface";
 
 export function ListItem(props: any) {
   const getSeverity = (employee: EmployeeInterface) => {

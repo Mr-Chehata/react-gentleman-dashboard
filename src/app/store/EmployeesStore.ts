@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { EmployeeInterface } from "../../Models/Employee";
 import { EmployeesService } from "../../Services/EmployeesService";
 import { RootState } from "../store";
+import EmployeeInterface from "../../Models/EmployeeInterface";
 
 export interface EmployeesFetchState {
   employees: EmployeeInterface[];
@@ -35,7 +35,7 @@ export const fetchEmployeeById = createAsyncThunk(
   "employees/getById",
   async (id: string, { rejectWithValue }) => {
     try {
-      const response = await employeesService.getEmployeeWithProject(id);
+      const response = await employeesService.getEmployeeWithProjects(id);
       return response;
     } catch (err) {
       return rejectWithValue(err);

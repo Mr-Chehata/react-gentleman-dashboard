@@ -1,5 +1,5 @@
 import API from "../API";
-import EmployeeInterface from "../Models/EmployeeInterface";
+import EmployeeInterface, { EmployeeRawInterface } from "../Models/EmployeeInterface";
 
 import { ProjectsService } from "./ProjectsService";
 
@@ -7,7 +7,7 @@ import { ProjectsService } from "./ProjectsService";
 export class EmployeesService {
   private projectsService: ProjectsService;
   private employees: EmployeeInterface[];
-  
+
   constructor() {
     this.employees = [];
     this.projectsService = new ProjectsService();
@@ -31,8 +31,8 @@ export class EmployeesService {
     );
   }
 
-  getEmployeeById(id: string): Promise<EmployeeInterface> {
-    return new Promise<EmployeeInterface>((resolve, reject) =>
+  getEmployeeById(id: string): Promise<EmployeeRawInterface> {
+    return new Promise<EmployeeRawInterface>((resolve, reject) =>
       API.get(`employees/${id}`).then((res) => {
         //@note: Only to see async loading and show skeleton loader...
         setTimeout(() => resolve(res.data), 2000);
@@ -45,23 +45,27 @@ export class EmployeesService {
 
   async getEmployeeWithProjects(id: string): Promise<EmployeeInterface | null> {
     try {
-     
+
       const employee = await this.getEmployeeById(id);
 
+      // Create a new object with the correct type
+      const enrichedEmployee: EmployeeInterface = {
+        ...employee,
+        projects: [] // Initialize as empty ProjectInterface array
+      };
       if (!employee) {
         return null;
       }
 
-   
       if (employee.projects.length > 0) {
-        employee.projects = await Promise.all(
+        enrichedEmployee.projects = await Promise.all(
           employee.projects.map(async (projectId: number) => {
             return await this.projectsService.getProjectById(projectId.toString());
           })
         );
       }
 
-      return employee;
+      return enrichedEmployee;
     } catch (error) {
       console.error(`Error fetching employee with projects: ${error}`);
       throw error;

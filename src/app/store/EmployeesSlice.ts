@@ -32,7 +32,7 @@ export const fetchEmployees = createAsyncThunk("employees/getAll", async () => {
 export const fetchEmployeeById = createAsyncThunk(
   "employees/getById",
   async (id: string) => {
-    const response = await employeesService.getEmployeeById(id);
+    const response = await employeesService.getEmployeeWithProjects(id);
     // The value we return becomes the `fulfilled` action payload
     return response;
   }

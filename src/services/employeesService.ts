@@ -14,7 +14,6 @@ export class EmployeesService {
   }
 
   getEmployees(): Promise<EmployeeInterface[]> {
-    this.employees = [];
     return new Promise<EmployeeInterface[]>((resolve, reject) =>
       API.get(`employees`)
         .then((res) => {
@@ -56,7 +55,6 @@ export class EmployeesService {
       if (!employee) {
         return null;
       }
-
       if (employee.projects.length > 0) {
         enrichedEmployee.projects = await Promise.all(
           employee.projects.map(async (projectId: number) => {
